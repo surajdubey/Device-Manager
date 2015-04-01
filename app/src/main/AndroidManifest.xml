@@ -20,6 +20,18 @@
             android:name=".RegisterActivity"
             android:label="@string/title_activity_register" >
         </activity>
+        <activity
+            android:name=".IconActivity"
+            android:label="@string/title_activity_icon" >
+        </activity>
+        <activity
+            android:name=".StartupActivity"
+            android:label="@string/title_activity_startup" >
+        </activity>
+        <activity
+            android:name=".GetAdminActivity"
+            android:label="@string/title_activity_get_admin" >
+        </activity>
     </application>
 
 </manifest>

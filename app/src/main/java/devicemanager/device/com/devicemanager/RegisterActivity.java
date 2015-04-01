@@ -1,5 +1,11 @@
 package devicemanager.device.com.devicemanager;
 
+import static devicemanager.device.com.devicemanager.CommonUtilities.Logd;
+import static devicemanager.device.com.devicemanager.CommonUtilities.getVAR;
+import static devicemanager.device.com.devicemanager.CommonUtilities.setVAR;
+import static devicemanager.device.com.devicemanager.CommonUtilities.loadVARs;
+
+
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;

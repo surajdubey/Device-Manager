@@ -2,6 +2,11 @@ package devicemanager.device.com.devicemanager;
 
 import android.support.v7.app.ActionBarActivity;
 
+import static devicemanager.device.com.devicemanager.CommonUtilities.Logd;
+import static devicemanager.device.com.devicemanager.CommonUtilities.getVAR;
+import static devicemanager.device.com.devicemanager.CommonUtilities.setVAR;
+import static devicemanager.device.com.devicemanager.CommonUtilities.loadVARs;
+
 import java.io.IOException;
 import java.util.Date;
 import android.app.Activity;
