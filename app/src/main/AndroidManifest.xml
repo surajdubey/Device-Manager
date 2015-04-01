@@ -32,6 +32,10 @@
             android:name=".GetAdminActivity"
             android:label="@string/title_activity_get_admin" >
         </activity>
+        <activity
+            android:name=".ReceiveActivity"
+            android:label="@string/title_activity_receive" >
+        </activity>
     </application>
 
 </manifest>

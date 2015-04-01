@@ -8,5 +8,6 @@
     <string name="title_activity_icon">IconActivity</string>
     <string name="title_activity_startup">StartupActivity</string>
     <string name="title_activity_get_admin">GetAdminActivity</string>
+    <string name="title_activity_receive">ReceiveActivity</string>
 
 </resources>
