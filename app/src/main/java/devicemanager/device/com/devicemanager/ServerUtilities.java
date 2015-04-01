@@ -1,6 +1,12 @@
 package devicemanager.device.com.devicemanager;
 
 
+import static devicemanager.device.com.devicemanager.CommonUtilities.Logd;
+import static devicemanager.device.com.devicemanager.CommonUtilities.getVAR;
+import static devicemanager.device.com.devicemanager.CommonUtilities.setVAR;
+import static devicemanager.device.com.devicemanager.CommonUtilities.loadVARs;
+
+import static devicemanager.device.com.devicemanager.CommonUtilities.displayMessage;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;

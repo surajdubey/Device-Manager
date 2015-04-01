@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.nowsci.odm.GetLocation.LocationResult;
+import devicemanager.device.com.devicemanager.GetLocation.LocationResult;
 
 import android.app.Service;
 import android.content.Context;

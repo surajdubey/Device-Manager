@@ -5,6 +5,7 @@ import static devicemanager.device.com.devicemanager.CommonUtilities.Logd;
 import static devicemanager.device.com.devicemanager.CommonUtilities.getVAR;
 import static devicemanager.device.com.devicemanager.CommonUtilities.setVAR;
 import static devicemanager.device.com.devicemanager.CommonUtilities.loadVARs;
+import static devicemanager.device.com.devicemanager.CommonUtilities.checkStorageDir;
 
 import java.io.DataInputStream;
 import java.io.File;

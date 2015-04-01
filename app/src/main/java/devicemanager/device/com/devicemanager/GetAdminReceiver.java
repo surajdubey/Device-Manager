@@ -4,7 +4,7 @@ import android.app.admin.DeviceAdminReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import static devicemanager.device.com.devicemanager.Logd;
+import static devicemanager.device.com.devicemanager.CommonUtilities.Logd;
 
 public class GetAdminReceiver extends DeviceAdminReceiver {
 
