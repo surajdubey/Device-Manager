@@ -2,6 +2,54 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="devicemanager.device.com.devicemanager" >
 
+    <!-- Needs to start at boot. -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- GCM connects to Internet Services. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- GCM requires a Google account. -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <!-- Keeps the processor from sleeping when a message is received. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Creates a custom permission so only this app can receive its messages. -->
+
+    <!-- This app has permission to register and receive data message. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <!-- Network State Permissions to detect Internet status -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Permission to vibrate -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Permission to location -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- Permission for alert window (for pictures) -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!-- Permission for un-hiding icon code -->
+    <!-- <uses-permission android:name="android.permission.READ_PHONE_STATE" /> -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+
+    <!-- Permission for camera and saving photo-->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.front" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <!--  For identifying SIM -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <permission android:name="devicemanager.device.com.devicemanager.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    <uses-permission android:name="devicemanager.device.com.devicemanager.permission.C2D_MESSAGE" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
