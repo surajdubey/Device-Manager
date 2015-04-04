@@ -6,12 +6,12 @@
 
       <TextView android:layout_width="fill_parent"
          android:layout_height="wrap_content"
-         android:text="Open Device Manager requires admininistrative priviledges to function. Please enable them below."
+         android:text="Please eneble device manager to make the app work."
          android:layout_marginLeft="10dip"
          android:layout_marginRight="10dip"
          android:layout_marginTop="20dip"
          android:layout_marginBottom="20dip" />
       
-      <Button android:id="@+id/btnEnable" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Enable"/>
+      <Button android:id="@+id/btnEnable" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Enable Device Manager"/>
         
 </LinearLayout>

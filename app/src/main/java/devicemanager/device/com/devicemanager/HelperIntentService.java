@@ -59,8 +59,6 @@ public class HelperIntentService extends IntentService {
     }
 
     private void handleMessage(String message) {
-        // Waking up mobile if it is sleeping
-        //WakeLocker.acquire(getApplicationContext());
         if (message.startsWith("Command:Notify:")) {
             String notification = message.replaceFirst("Command:Notify:", "");
             generateNotification(context, notification);
@@ -100,8 +98,6 @@ public class HelperIntentService extends IntentService {
                 mDPM.lockNow();
             }
         }
-        // Releasing wake lock
-        //WakeLocker.release();
     }
 
     // Issues a notification to inform the user that server has sent a message.

@@ -16,8 +16,6 @@ import android.content.Intent;
 
 public class AutoStart extends BroadcastReceiver {
     private static final String TAG= "ODMAutoStart";
-    UpdateAlarm updateAlarm = new UpdateAlarm();
-    LocationAlarm locationAlarm = new LocationAlarm();
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -25,15 +23,6 @@ public class AutoStart extends BroadcastReceiver {
             loadVARs(context);
             String interval = getVAR("INTERVAL");
             String version = getVAR("VERSION");
-            if (!interval.equals("0")) {
-                Logd(TAG, "Good to start location alarm.");
-                locationAlarm.SetInterval(interval);
-                locationAlarm.SetAlarm(context);
-            }
-            if (version.equals("true")) {
-                Logd(TAG, "Good to start update alarm.");
-                updateAlarm.SetAlarm(context);
-            }
         }
     }
 }

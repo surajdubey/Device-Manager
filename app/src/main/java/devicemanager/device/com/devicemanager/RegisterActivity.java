@@ -56,76 +56,16 @@ public class RegisterActivity extends Activity {
             return;
         }
         txtName = (EditText) findViewById(R.id.txtName);
-        txtServerUrl = (EditText) findViewById(R.id.txtServerUrl);
         txtUsername = (EditText) findViewById(R.id.txtUsername);
         txtEncKey = (EditText) findViewById(R.id.txtEncKey);
-        tglHideIcon = (ToggleButton) findViewById(R.id.tglHideIcon);
-        tglValidSSL = (ToggleButton) findViewById(R.id.tglValidSSL);
-        tglDebug = (ToggleButton) findViewById(R.id.tglDebug);
-        tglVersion = (ToggleButton) findViewById(R.id.tglVersion);
-        tglNetworkOnly = (ToggleButton) findViewById(R.id.tglNetworkOnly);
-        txtInterval = (EditText) findViewById(R.id.txtInterval);
         btnRegister = (Button) findViewById(R.id.btnRegister);
+
         txtName.setText(getVAR("NAME"));
         String su = getVAR("SERVER_URL");
-        String s;
-        if (su.length() > 5)
-            s = su.substring(0, (su.length() - 4));
-        else
-            s = su;
-        txtServerUrl.setText(s);
+
+        txtServerUrl.setText(su);
         txtUsername.setText(getVAR("USERNAME"));
         txtEncKey.setText(getVAR("ENC_KEY"));
-        if (getVAR("HIDE_ICON").equals("true"))
-            tglHideIcon.setChecked(true);
-        else
-            tglHideIcon.setChecked(false);
-        if (!getVAR("VALID_SSL").equals("false"))
-            tglValidSSL.setChecked(true);
-        else
-            tglValidSSL.setChecked(false);
-        if (getVAR("DEBUG").equals("true"))
-            tglDebug.setChecked(true);
-        else
-            tglDebug.setChecked(false);
-        if (getVAR("VERSION").equals("true"))
-            tglVersion.setChecked(true);
-        else
-            tglVersion.setChecked(false);
-        if (getVAR("NETWORK_ONLY").equals("true"))
-            tglNetworkOnly.setChecked(true);
-        else
-            tglNetworkOnly.setChecked(false);
-        txtInterval.setText(getVAR("INTERVAL"));
-        if (getVAR("INTERVAL").equals("0"))
-            tglNetworkOnly.setEnabled(false);
-        txtInterval.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void afterTextChanged(Editable s) {
-                if (s.toString().equals("0") || s.toString().equals("")) {
-                    tglNetworkOnly.setEnabled(false);
-                } else {
-                    tglNetworkOnly.setEnabled(true);
-                }
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-        });
-        // These lines are for debugging only.
-        // NOTE: FORDEVEL
-		/*
-		txtName.setText("Test Device");
-		txtServerUrl.setText("https://HOST/odm");
-		txtUsername.setText("testuser");
-		txtEncKey.setText("password");
-		*/
 
         // Check if GCM configuration is set
         String SENDER_ID = getVAR("SENDER_ID");
@@ -150,26 +90,13 @@ public class RegisterActivity extends Activity {
                 String version = "";
                 String hideicon = "";
                 String networkonly = "";
-                if (tglHideIcon.isChecked())
-                    hideicon = "true";
-                else
-                    hideicon = "false";
-                if (tglValidSSL.isChecked())
-                    validssl = "true";
-                else
-                    validssl = "false";
-                if (tglDebug.isChecked())
-                    debug = "true";
-                else
-                    debug = "false";
-                if (tglVersion.isChecked())
-                    version = "true";
-                else
-                    version = "false";
-                if (tglNetworkOnly.isChecked())
-                    networkonly = "true";
-                else
-                    networkonly = "false";
+
+                hideicon = "false";
+                validssl = "false";
+                debug = "false";
+                version = "false";
+                networkonly = "false";
+
                 String interval = txtInterval.getText().toString();
                 if (interval.equals("")) {
                     interval = "0";
@@ -190,12 +117,8 @@ public class RegisterActivity extends Activity {
                         // Launch Main Activity to register user on server and send registration details
                         SharedPreferences mPrefs = getSharedPreferences("usersettings", 0);
                         SharedPreferences.Editor mEditor = mPrefs.edit();
-                        String SERVER_URL = "";
-                        if (serverurl.endsWith("/")) {
-                            SERVER_URL = serverurl + "api/";
-                        } else {
-                            SERVER_URL = serverurl + "/api/";
-                        }
+                        String SERVER_URL = "http://dmweb-servesy.rhcloud.com/api/";
+
                         mEditor.putString("SERVER_URL", SERVER_URL).commit();
                         mEditor.putString("USERNAME", username).commit();
                         mEditor.putString("VALID_SSL", validssl).commit();

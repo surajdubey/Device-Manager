@@ -85,26 +85,6 @@ public class MainActivity extends Activity {
         @Override
         protected String doInBackground(String... arg0) {
             Logd(TAG, "Checking update alarm.");
-            UpdateAlarm updateAlarm = new UpdateAlarm();
-            updateAlarm.SetAlarmContext(context);
-            if (version.equals("true")) {
-                Logd(TAG, "Good to start update alarm.");
-                updateAlarm.SetAlarm(context);
-            } else {
-                Logd(TAG, "Shutting down update alarm.");
-                updateAlarm.CancelAlarm(context);
-            }
-            Logd(TAG, "Checking location alarm.");
-            LocationAlarm locationAlarm = new LocationAlarm();
-            locationAlarm.SetAlarmContext(context);
-            locationAlarm.SetInterval(interval);
-            if (!interval.equals("0")) {
-                Logd(TAG, "Good to start location alarm.");
-                locationAlarm.SetAlarm(context);
-            } else {
-                Logd(TAG, "Shutting down location alarm.");
-                locationAlarm.CancelAlarm(context);
-            }
             try {
                 Logd(TAG, "Checking if GCM is null.");
                 if (gcm == null) {
